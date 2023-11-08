@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { read, utils, write, writeFile, writeFileXLSX } from "xlsx";
+import { utils, writeFile } from "xlsx";
 
 import { obtenerFechasSinFeriadosYSabadosDomingos } from "../helpers/diasHabiles";
+
+import "./Planilla.css";
 
 const Planilla = ({ fechaInicio, fechaFin }) => {
     const [diasPlanilla, setDíasPlanilla] = useState([]);

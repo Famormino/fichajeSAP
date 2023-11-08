@@ -1,0 +1,71 @@
+html {
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 3px solid rgb(81, 113, 255);
+}
+
+thead th:nth-child(1) {
+    width: 10%;
+}
+
+thead th:nth-child(2) {
+    width: 10%;
+}
+
+thead th:nth-child(3) {
+    width: 1%;
+}
+
+thead th:nth-child(4) {
+    width: 1%;
+}
+
+thead th:nth-child(5) {
+    width: 15%;
+}
+
+th,
+td {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+th {
+    letter-spacing: 2px;
+}
+
+td {
+    letter-spacing: 1px;
+}
+
+tbody td {
+    text-align: center;
+}
+
+thead {
+    background: url(leopardskin.jpg);
+    color: black;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+    color: black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eee;
+    color: black;
+}
+
+tbody tr {
+    background-image: url(noise.png);
+}
+
+table {
+    background-color: rgb(100, 129, 255);
+}
