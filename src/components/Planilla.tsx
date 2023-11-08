@@ -14,8 +14,20 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
     useEffect(() => {
         setDíasPlanilla(
             dias.flatMap((dia) => [
-                {dia:dia.toLocaleDateString(), hora: "07:00",tipo: "P10"},
-                {dia: dia.toLocaleDateString(),hora: "16:00",tipo: "P20"},
+                {
+                    Fecha: dia.toLocaleDateString(),
+                    Hora: "07:00:00",
+                    ClaseHechoTemporal: "P10",
+                    Descripcion: "",
+                    TP: "+",
+                },
+                {
+                    Fecha: dia.toLocaleDateString(),
+                    Hora: "16:00:00",
+                    ClaseHechoTemporal: "P20",
+                    Descripcion: "",
+                    TP: "+",
+                },
             ])
         );
     }, [fechaInicio, fechaFin]);
@@ -27,19 +39,34 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
         const wb = utils.book_new();
         utils.book_append_sheet(wb, ws, "Data");
         /* export to XLSX */
-        writeFile(wb, "SheetJSReactAoO.xlsx");
+        writeFile(wb, "FichajeSap.xlsx");
     }, [dias]);
 
     return (
         <div>
-            <ul>
-                {dias.map((dia, index) => (
-                    <span key={index}>
-                        <li>{`${dia.toLocaleDateString()} 07:00 P10`}</li>
-                        <li>{`${dia.toLocaleDateString()} 16:00 P20`}</li>
-                    </span>
-                ))}
-            </ul>
+            <table>
+                <caption>Fichaje SAP</caption>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Clase Hecho Temporal</th>
+                        <th>Descripcion</th>
+                        <th>TP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {diasPlanilla.map((dia, index) => (
+                        <tr key={index}>
+                            <td>{dia.Fecha}</td>
+                            <td>{dia.Hora}</td>
+                            <td>{dia.ClaseHechoTemporal}</td>
+                            <td>{dia.Descripcion}</td>
+                            <td>{dia.TP}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
             <button onClick={exportFile}>Exportar a Excel</button>
         </div>
     );
