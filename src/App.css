@@ -128,9 +128,8 @@
 }
 
 .rdrMonth {
-    background: rgba(239, 242, 247, 0.514);;
+    background: rgba(239, 242, 247, 0.514);
     padding: 0 0.833em 1.666em 0.833em;
-
 }
 
 .rdrMonth .rdrWeekDays {
