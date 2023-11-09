@@ -1,11 +1,12 @@
 import { addDays } from "date-fns";
-import es from "date-fns/locale/es";
 import { useState } from "react";
-import { DateRangePicker } from "react-date-range";
+import { DateRangePicker, defaultStaticRanges, defaultInputRanges } from "react-date-range";
+import es from "date-fns/locale/es";
 
 import "react-date-range/dist/styles.css"; // main css file
 import "./App.css";
 import Planilla from "./components/Planilla";
+
 const App = () => {
     const [state, setState] = useState([
         {
@@ -25,7 +26,17 @@ const App = () => {
                 ranges={state}
                 direction="horizontal"
                 locale={es}
+                defaultStaticRanges={[
+                    ...defaultStaticRanges,
+                    (defaultStaticRanges[0].label = "Hoy"),
+                    (defaultStaticRanges[1].label = "Ayer"),
+                    (defaultStaticRanges[2].label = "Semana Actual"),
+                    (defaultStaticRanges[3].label = "Última Semana"),
+                    (defaultStaticRanges[4].label = "Mes Actual"),
+                    (defaultStaticRanges[5].label = "Último Mes"),
+                ]}
             />
+
             <div className="container_planilla">
                 {state.map((fecha) => (
                     <Planilla

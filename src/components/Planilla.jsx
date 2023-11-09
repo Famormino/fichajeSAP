@@ -36,7 +36,6 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
         }
 
         sel.removeAllRanges();
-
     };
 
     useEffect(() => {
@@ -73,7 +72,6 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
     return (
         <div>
             <table>
-                <caption>Días a Copiar</caption>
                 <thead>
                     <tr>
                         <th>Fecha</th>
@@ -96,8 +94,14 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                 </tbody>
             </table>
             <div className="planilla-buttons">
-                <button className="buttons" onClick={exportFile}>Exportar a Excel</button>
-                <button className="buttons" onClick={copyTable}>Copiar tabla</button>
+                <button className="buttons" onClick={exportFile}>
+                    <img src="excel.png" alt="" width={20} height={20} />
+                    Exportar a Excel
+                </button>
+                <button className="buttons" onClick={copyTable}>
+                    <img src="copy.png" alt="" width={20} height={20} />
+                    Copy to Clipboard
+                </button>
             </div>
         </div>
     );
