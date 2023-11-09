@@ -1,13 +1,11 @@
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
-
 import { addDays } from "date-fns";
 import es from "date-fns/locale/es";
 import { useState } from "react";
 import { DateRangePicker } from "react-date-range";
 
+import "react-date-range/dist/styles.css"; // main css file
 import "./App.css";
-import Planilla from "./components/Planilla.tsx";
+import Planilla from "./components/Planilla";
 const App = () => {
     const [state, setState] = useState([
         {
