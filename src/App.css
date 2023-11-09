@@ -1,9 +1,11 @@
 .container {
     padding-top: 20px;
-    height: fit-content;
-    margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
 }
 
+.container_planilla {
+    width: 57%;;
+}

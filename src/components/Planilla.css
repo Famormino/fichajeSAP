@@ -2,10 +2,18 @@ html {
     font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 
+caption {
+    font-size: larger;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.808);
+    background: rgb(239, 242, 247);
+}
+
 table {
-    table-layout: fixed;
     border-collapse: collapse;
-    border: 3px solid rgb(81, 113, 255);
+    border: 2px solid rgb(239, 242, 247);
 }
 
 thead th:nth-child(1) {
@@ -48,8 +56,7 @@ tbody td {
 }
 
 thead {
-    background: url(leopardskin.jpg);
-    color: black;
+    color: white;
 }
 
 tbody tr:nth-child(odd) {
@@ -58,14 +65,10 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #eee;
+    background-color: #eeeeeed7;
     color: black;
 }
 
-tbody tr {
-    background-image: url(noise.png);
-}
-
 table {
-    background-color: rgb(100, 129, 255);
+    background-color: rgb(61, 145, 255);
 }

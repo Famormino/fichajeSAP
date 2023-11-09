@@ -28,13 +28,15 @@ const App = () => {
                 direction="horizontal"
                 locale={es}
             />
-            {state.map((fecha) => (
-                <Planilla
-                    key={fecha.key}
-                    fechaInicio={fecha.startDate}
-                    fechaFin={fecha.endDate}
-                />
-            ))}
+            <div className="container_planilla">
+                {state.map((fecha) => (
+                    <Planilla
+                        key={fecha.key}
+                        fechaInicio={fecha.startDate}
+                        fechaFin={fecha.endDate}
+                    />
+                ))}
+            </div>
         </main>
     );
 };

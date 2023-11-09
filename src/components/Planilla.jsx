@@ -47,7 +47,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
     return (
         <div>
             <table>
-                <caption>Fichaje SAP</caption>
+                <caption>Días a Copiar</caption>
                 <thead>
                     <tr>
                         <th>Fecha</th>
