@@ -72,3 +72,37 @@ tbody tr:nth-child(even) {
 table {
     background-color: rgb(61, 145, 255);
 }
+
+.planilla-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.buttons {
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color:rgb(61, 145, 255);
+    border: 1px solid white;
+    color: #fff;
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+}
+
+.buttons:hover {
+    background-color:rgb(11, 117, 255);
+    transition: 0.7s;
+}
+
+.buttons:focus {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 1px #000000;
+    transition: 0.2s;
+
+}

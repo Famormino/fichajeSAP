@@ -13,7 +13,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
     );
 
     const copyTable = () => {
-        const elTable = document.querySelector("table");
+        const elTable = document.querySelector("tbody");
 
         let range, sel;
 
@@ -37,7 +37,6 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
 
         sel.removeAllRanges();
 
-        console.log("Element Copied! Paste it in a file");
     };
 
     useEffect(() => {
@@ -96,8 +95,10 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                     ))}
                 </tbody>
             </table>
-            <button onClick={exportFile}>Exportar a Excel</button>
-            <button onClick={copyTable}>Copiar tabla</button>
+            <div className="planilla-buttons">
+                <button className="buttons" onClick={exportFile}>Exportar a Excel</button>
+                <button className="buttons" onClick={copyTable}>Copiar tabla</button>
+            </div>
         </div>
     );
 };
