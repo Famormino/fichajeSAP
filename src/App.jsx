@@ -3,7 +3,6 @@ import { useState } from "react";
 import { DateRangePicker, defaultStaticRanges } from "react-date-range";
 import Planilla from "./components/Planilla";
 
-import es from "date-fns/locale/es";
 
 import "react-date-range/dist/styles.css"; // main css file
 import "./App.css";
@@ -30,7 +29,6 @@ const App = () => {
                 months={2}
                 ranges={state}
                 direction="horizontal"
-                locale={es}
                 defaultStaticRanges={[
                     ...defaultStaticRanges,
                     (defaultStaticRanges[0].label = "Hoy"),
