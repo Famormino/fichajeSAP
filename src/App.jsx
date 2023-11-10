@@ -1,6 +1,7 @@
 import { addDays } from "date-fns";
 import { useState } from "react";
-import { DateRangePicker, defaultStaticRanges, defaultInputRanges } from "react-date-range";
+import { DateRangePicker, defaultStaticRanges } from "react-date-range";
+
 import es from "date-fns/locale/es";
 
 import "react-date-range/dist/styles.css"; // main css file
@@ -18,6 +19,10 @@ const App = () => {
 
     return (
         <main className="container">
+            <div className="titulo">
+                Planillarda{" "}
+                <img src="sapTitulo.png" width={70} height={70} alt="" />
+            </div>
             <DateRangePicker
                 onChange={(item) => setState([item.selection])}
                 showSelectionPreview={true}
@@ -36,7 +41,17 @@ const App = () => {
                     (defaultStaticRanges[5].label = "Último Mes"),
                 ]}
             />
-
+            <div className="container-desc">
+                ↪ La selección excluye fines de semana y feriados.{" "}
+                <span
+                    style={{
+                        color: "rgba(11, 117, 255, 0.74)",
+                        fontWeight: "500",
+                    }}
+                >
+                    Try It!
+                </span>
+            </div>
             <div className="container_planilla">
                 {state.map((fecha) => (
                     <Planilla
