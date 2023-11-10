@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { utils, writeFile } from "xlsx";
 
 import { obtenerFechasSinFeriadosYSabadosDomingos } from "../helpers/diasHabiles";
