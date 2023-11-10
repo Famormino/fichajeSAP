@@ -1,6 +1,7 @@
 // Lista lista de días feriados
 const feriados = [
   '2023-01-01', // Año Nuevo
+  '2023-11-15',
   '2023-12-25',
   "2024-01-01",
   "2024-02-12",
