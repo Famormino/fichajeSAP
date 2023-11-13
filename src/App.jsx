@@ -16,7 +16,6 @@ const App = () => {
             key: "selection",
         },
     ]);
-    console.log(state[0]);
     return (
         <main className="container">
             <div className="titulo">

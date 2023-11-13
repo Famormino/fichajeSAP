@@ -7,6 +7,20 @@ import "./Planilla.css";
 
 const Planilla = ({ fechaInicio, fechaFin }) => {
     const [diasPlanilla, setDíasPlanilla] = useState([]);
+
+    const inputHandler = (e) => {
+        setDíasPlanilla((prevDias) => {
+            return prevDias.map((dia) => {
+                if (dia.ClaseHechoTemporal === "P20") {
+                    return {
+                        ...dia,
+                        Hora: e.target.value,
+                    };
+                }
+                return dia;
+            });
+        });
+    };
     const dias = obtenerFechasSinFeriadosYSabadosDomingos(
         fechaInicio,
         fechaFin
@@ -66,6 +80,15 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
 
     return (
         <div>
+            <label htmlFor="hora">Modificar Horario de Salida</label>
+            <input
+                type="time"
+                id="hora"
+                name="hora"
+                step={2}
+                onChange={inputHandler}
+                
+            />
             <table>
                 <thead>
                     <tr>
