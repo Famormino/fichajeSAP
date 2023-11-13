@@ -17,13 +17,10 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
 
         let range, sel;
 
-        // Ensure that range and selection are supported by the browsers
         if (document.createRange && window.getSelection) {
             range = document.createRange();
             sel = window.getSelection();
-            // unselect any element in the page
             sel.removeAllRanges();
-
             try {
                 range.selectNodeContents(elTable);
                 sel.addRange(range);
@@ -31,10 +28,8 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                 range.selectNode(elTable);
                 sel.addRange(range);
             }
-
             document.execCommand("copy");
         }
-
         sel.removeAllRanges();
     };
 

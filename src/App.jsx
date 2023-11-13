@@ -16,7 +16,7 @@ const App = () => {
             key: "selection",
         },
     ]);
-
+    console.log(state[0]);
     return (
         <main className="container">
             <div className="titulo">
@@ -53,13 +53,12 @@ const App = () => {
                 </span>
             </div>
             <div className="container_planilla">
-                {state.map((fecha) => (
+                {
                     <Planilla
-                        key={fecha.key}
-                        fechaInicio={fecha.startDate}
-                        fechaFin={fecha.endDate}
+                        fechaInicio={state[0].startDate}
+                        fechaFin={state[0].endDate}
                     />
-                ))}
+                }
             </div>
         </main>
     );
