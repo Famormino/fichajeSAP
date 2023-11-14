@@ -80,15 +80,20 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
 
     return (
         <div>
-            <label htmlFor="hora">Modificar Horario de Salida</label>
-            <input
-                type="time"
-                id="hora"
-                name="hora"
-                step={2}
-                onChange={inputHandler}
-                
-            />
+            <section className="hora">
+                <label htmlFor="hora">
+                    Modificar todos los horarios de salida ►{" "}
+                </label>
+                <input
+                    className="hora"
+                    type="time"
+                    id="hora"
+                    name="hora"
+                    step={2}
+                    onChange={inputHandler}
+                    defaultValue={"16:00:00"}
+                />
+            </section>
             <table>
                 <thead>
                     <tr>

@@ -96,3 +96,18 @@ table {
     border: 1px solid #000;
 }
 
+.hora {
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    align-items: center;
+}
+
+.hora label {
+    font-weight: bold;
+}
+
+.hora button {
+    padding: 7px;
+}
