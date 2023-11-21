@@ -7,6 +7,7 @@ import "./Planilla.css";
 
 const Planilla = ({ fechaInicio, fechaFin }) => {
     const [diasPlanilla, setDíasPlanilla] = useState([]);
+    const [copied, setCopied] = useState(false);
 
     const inputHandler = (e) => {
         setDíasPlanilla((prevDias) => {
@@ -27,6 +28,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
     );
 
     const copyTable = () => {
+        setCopied(true);
         const elTable = document.querySelector("tbody");
 
         let range, sel;
@@ -66,6 +68,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                 },
             ])
         );
+        setCopied(false)
     }, [fechaInicio, fechaFin]);
 
     const exportFile = useCallback(() => {
@@ -121,9 +124,12 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                     <img src="excel.png" alt="" width={20} height={20} />
                     Exportar a Excel
                 </button>
-                <button className="buttons" onClick={copyTable}>
+                <button
+                    className={`${copied ? "buttonsGreen" : "buttons"} `}
+                    onClick={copyTable}
+                >
                     <img src="copy.png" alt="" width={20} height={20} />
-                    Copy to Clipboard
+                    {!copied ? "Copy to Clipboard" : "Copied!"}
                 </button>
             </div>
         </div>
