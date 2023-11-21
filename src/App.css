@@ -9,9 +9,8 @@
 }
 
 .container_planilla {
-    position: absolute;
+    display: block;
     margin-left: 200px;
-    margin-top: 530px;
     padding: 20px;
     width: 60%;
 }
@@ -24,7 +23,7 @@
     text-transform: uppercase;
 }
 .container-desc {
-    margin-top: 20px;
+    margin-top: 0 auto;
     margin-left: 200px;
 }
 
