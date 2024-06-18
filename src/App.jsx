@@ -1,4 +1,4 @@
-import { addDays } from "date-fns";
+import { addDays, isToday } from "date-fns";
 import { useState } from "react";
 import { DateRangePicker, defaultStaticRanges } from "react-date-range";
 import Planilla from "./components/Planilla";
@@ -16,6 +16,7 @@ const App = () => {
             key: "selection",
         },
     ]);
+
     return (
         <main className="container">
             <div className="titulo">
@@ -23,13 +24,13 @@ const App = () => {
                 <img src="sapTitulo.png" width={70} height={70} alt="" />
             </div>
             <DateRangePicker
-                onChange={(item) => setState([item.selection])}
                 showSelectionPreview={true}
                 moveRangeOnFirstSelection={false}
                 months={2}
                 ranges={state}
                 direction="horizontal"
                 locale={es}
+                onChange={(item) => setState([item.selection])}
                 defaultStaticRanges={[
                     ...defaultStaticRanges,
                     (defaultStaticRanges[0].label = "Hoy"),
