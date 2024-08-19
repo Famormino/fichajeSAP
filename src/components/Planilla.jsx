@@ -8,7 +8,7 @@ import "./Planilla.css";
 const Planilla = ({ fechaInicio, fechaFin }) => {
     const [diasPlanilla, setDíasPlanilla] = useState([]);
     const [copied, setCopied] = useState(false);
-
+    console.log(diasPlanilla);
     const inputHandler = (e) => {
         setDíasPlanilla((prevDias) => {
             return prevDias.map((dia) => {
@@ -22,6 +22,18 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
             });
         });
     };
+
+    const inputLegajoHandler = (e) => {
+        setDíasPlanilla((prevDias) => {
+            return prevDias.map((dia) => {
+                return {
+                    ...dia,
+                    Legajo: e.target.value,
+                };
+            });
+        });
+    };
+
     const dias = obtenerFechasSinFeriadosYSabadosDomingos(
         fechaInicio,
         fechaFin
@@ -53,14 +65,16 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
         setDíasPlanilla(
             dias.flatMap((dia) => [
                 {
-                    Fecha: dia.toLocaleDateString(),
+                    Legajo: dia.Legajo,
+                    Fecha: dia.toLocaleDateString().replaceAll("/", "."),
                     Hora: "07:00:00",
                     ClaseHechoTemporal: "P10",
                     Descripcion: "",
                     TP: "+",
                 },
                 {
-                    Fecha: dia.toLocaleDateString(),
+                    Legajo: dia.Legajo,
+                    Fecha: dia.toLocaleDateString().replaceAll("/", "."),
                     Hora: "16:00:00",
                     ClaseHechoTemporal: "P20",
                     Descripcion: "",
@@ -68,7 +82,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                 },
             ])
         );
-        setCopied(false)
+        setCopied(false);
     }, [fechaInicio, fechaFin]);
 
     const exportFile = useCallback(() => {
@@ -84,15 +98,22 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
     return (
         <div>
             <section className="hora">
+                <label htmlFor="legajo">Legajo ► </label>
+                <input
+                    type="number"
+                    id="legajo"
+                    name="legajo"
+                    onChange={inputLegajoHandler}
+                    defaultValue={""}
+                    size="1"
+                />
                 <label htmlFor="hora">
                     Modificar todos los horarios de salida ►{" "}
                 </label>
                 <input
-                    className="hora"
                     type="time"
                     id="hora"
                     name="hora"
-                    step={2}
                     onChange={inputHandler}
                     defaultValue={"16:00:00"}
                 />
@@ -100,6 +121,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
             <table>
                 <thead>
                     <tr>
+                        <th>Legajo</th>
                         <th>Fecha</th>
                         <th>Hora</th>
                         <th>Clase Hecho Temporal</th>
@@ -110,6 +132,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                 <tbody>
                     {diasPlanilla.map((dia, index) => (
                         <tr key={index}>
+                            <td>{dia.Legajo}</td>
                             <td>{dia.Fecha}</td>
                             <td>{dia.Hora}</td>
                             <td>{dia.ClaseHechoTemporal}</td>

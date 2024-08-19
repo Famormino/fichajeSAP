@@ -2,7 +2,6 @@ table {
     border-collapse: collapse;
     border: 2px solid rgb(239, 242, 247);
 }
-
 thead th:nth-child(1) {
     width: 10%;
 }
@@ -12,14 +11,18 @@ thead th:nth-child(2) {
 }
 
 thead th:nth-child(3) {
-    width: 12%;
+    width: 10%;
 }
 
 thead th:nth-child(4) {
-    width: 1%;
+    width: 12%;
 }
 
 thead th:nth-child(5) {
+    width: 1%;
+}
+
+thead th:nth-child(6) {
     width: 5%;
 }
 
@@ -94,7 +97,7 @@ table {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    background-color:#00ff995e;
+    background-color: #00ff995e;
     border: 1px solid white;
     color: #000;
     border-radius: 10px;
@@ -114,11 +117,11 @@ table {
 }
 
 .hora {
-    padding: 1px;
+    padding: 11px;
     display: flex;
     justify-content: center;
-    gap: 3px;
     align-items: center;
+    gap: 20px;
 }
 
 .hora label {

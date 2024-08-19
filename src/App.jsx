@@ -42,15 +42,18 @@ const App = () => {
                 ]}
             />
             <div className="container-desc">
-                ↪ La selección excluye fines de semana y feriados.{" "}
-                <span
-                    style={{
-                        color: "rgba(11, 117, 255, 0.74)",
-                        fontWeight: "500",
-                    }}
-                >
-                    Try It!
-                </span>
+                <p className="ingreso-info">
+                    ▶ Ingresar fecha ▶ Luego legajo.
+                    <span
+                        style={{
+                            padding: "10px",
+                            color: "rgba(11, 117, 255, 0.74)",
+                            fontWeight: "500",
+                        }}
+                    >
+                         Try It!
+                    </span>
+                </p>
             </div>
             <div className="container_planilla">
                 {

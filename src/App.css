@@ -4,15 +4,13 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 7px;
     font-family: "Montserrat", sans-serif;
 }
 
 .container_planilla {
-    display: block;
-    margin-left: 200px;
-    padding: 20px;
-    width: 60%;
+    margin-left: 235px;
+    width: 50%;
 }
 .titulo {
     display: flex;
@@ -23,7 +21,7 @@
     text-transform: uppercase;
 }
 .container-desc {
-    margin-top: 0 auto;
+    margin-top: 10px;
     margin-left: 200px;
 }
 
@@ -455,4 +453,9 @@
     font-weight: 600;
     color: #849095;
     padding: 0.833em;
+}
+
+.ingreso-info {
+    font-weight: 900;
+    margin-left: 30px;
 }
