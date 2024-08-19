@@ -8,7 +8,6 @@ import "./Planilla.css";
 const Planilla = ({ fechaInicio, fechaFin }) => {
     const [diasPlanilla, setDíasPlanilla] = useState([]);
     const [copied, setCopied] = useState(false);
-    console.log(diasPlanilla);
     const inputHandler = (e) => {
         setDíasPlanilla((prevDias) => {
             return prevDias.map((dia) => {
@@ -61,11 +60,11 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
         sel.removeAllRanges();
     };
 
+    
     useEffect(() => {
         setDíasPlanilla(
             dias.flatMap((dia) => [
                 {
-                    Legajo: dia.Legajo,
                     Fecha: dia.toLocaleDateString().replaceAll("/", "."),
                     Hora: "07:00:00",
                     ClaseHechoTemporal: "P10",
@@ -73,7 +72,6 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                     TP: "+",
                 },
                 {
-                    Legajo: dia.Legajo,
                     Fecha: dia.toLocaleDateString().replaceAll("/", "."),
                     Hora: "16:00:00",
                     ClaseHechoTemporal: "P20",
@@ -95,6 +93,12 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
         writeFile(wb, "FichajeSap.xlsx");
     }, [dias]);
 
+    const handleRestart = () => {
+        setDíasPlanilla([]);
+        setCopied(!copied);
+    };
+
+
     return (
         <div>
             <section className="hora">
@@ -103,9 +107,9 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                     type="number"
                     id="legajo"
                     name="legajo"
+                    value={diasPlanilla.legajo}
                     onChange={inputLegajoHandler}
                     defaultValue={""}
-                    size="1"
                 />
                 <label htmlFor="hora">
                     Modificar todos los horarios de salida ►{" "}
@@ -154,6 +158,15 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                     <img src="copy.png" alt="" width={20} height={20} />
                     {!copied ? "Copy to Clipboard" : "Copied!"}
                 </button>
+                {copied && (
+                    <button
+                        className={`${copied ? "buttonsRed" : "buttons"} `}
+                        onClick={handleRestart}
+                    >
+                        <img src="copy.png" alt="" width={20} height={20} />
+                        Restart
+                    </button>
+                )}
             </div>
         </div>
     );

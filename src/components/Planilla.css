@@ -106,6 +106,23 @@ table {
     min-width: 120px;
 }
 
+.buttonsRed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #1e30fc5d;
+    border: 1px solid white;
+    color: #000;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 30px;
+    min-width: 120px;
+}
+
 .buttons:hover {
     background-color: rgba(11, 117, 255, 0.74);
     color: #fff;
