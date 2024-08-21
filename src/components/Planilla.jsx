@@ -5,6 +5,7 @@ import { obtenerFechasSinFeriadosYSabadosDomingos } from "../helpers/diasHabiles
 
 import "./Planilla.css";
 
+// eslint-disable-next-line react/prop-types
 const Planilla = ({ fechaInicio, fechaFin }) => {
     const [diasPlanilla, setDíasPlanilla] = useState([]);
     const [legajo, setLegajo] = useState("");
@@ -117,7 +118,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
             <table>
                 <thead>
                     <tr>
-                        <th>Legajo</th>
+                        {legajo ? <th>Legajo</th> : undefined}
                         <th>Fecha</th>
                         <th>Hora</th>
                         <th>Clase Hecho Temporal</th>
@@ -128,7 +129,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                 <tbody>
                     {diasPlanilla.map((dia, index) => (
                         <tr key={index}>
-                            <td>{legajo}</td>
+                            {legajo ? <td>{legajo}</td> : undefined}
                             <td>{dia.Fecha}</td>
                             <td>{dia.Hora}</td>
                             <td>{dia.ClaseHechoTemporal}</td>
