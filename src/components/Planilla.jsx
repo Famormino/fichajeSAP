@@ -103,6 +103,7 @@ const Planilla = ({ fechaInicio, fechaFin }) => {
                     name="legajo"
                     value={legajo}
                     onChange={inputLegajoHandler}
+                    min={1}
                 />
                 <label htmlFor="hora">
                     Modificar todos los horarios de salida ►{" "}
