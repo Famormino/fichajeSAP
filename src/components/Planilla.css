@@ -114,7 +114,7 @@ table {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    background-color: #1e30fc5d;
+    background-color: #ffa1c78c;
     border: 1px solid white;
     color: #000;
     border-radius: 10px;
@@ -133,18 +133,28 @@ table {
     border: 1px solid #000;
 }
 
-.hora {
-    padding: 11px;
+.hora__container {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    font-size: 1.1rem;
+    color: black;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
 }
 
-.hora label {
-    font-weight: bold;
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 .hora button {
-    padding: 7px;
+    padding: 71px;
 }

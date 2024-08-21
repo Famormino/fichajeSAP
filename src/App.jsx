@@ -43,7 +43,7 @@ const App = () => {
             />
             <div className="container-desc">
                 <p className="ingreso-info">
-                    ▶ Ingresar fecha ▶ Luego legajo.
+                    ▶ La selección excluye los fines se semana. 
                     <span
                         style={{
                             padding: "10px",
