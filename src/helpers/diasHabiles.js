@@ -25,7 +25,8 @@ const feriados = [
   "2024-12-24",
   "2024-12-25",
   "2024-12-31",
-  "2025-01-01"
+  "2025-03-03",
+  "2025-03-04",
   //Año nuevo
   // Agregar más días festivos o feriados acá...
 ];
