@@ -27,7 +27,8 @@ const feriados = [
   "2024-12-31",
   "2025-03-03",
   "2025-03-04",
-  "2025-02-04" //Veteranos de Malvinas
+  "2025-03-24",
+  "2025-04-02" //Veteranos de Malvinas
   //Año nuevo
   // Agregar más días festivos o feriados acá...
 ];
